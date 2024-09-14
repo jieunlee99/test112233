@@ -18,18 +18,20 @@ export class CategoriesService {
             `)
             .eq('user_id', user.id)
             .order('sort_order', {ascending: true});
-        console.log('결과는?', data, error);
+        console.log('결과는', user);
         return data;
     }
 
-    async create({name, sort_order, visibility = 'private'}) {
+    async create(user, {name, sort_order, visibility = 'private'}) {
         const {data, error} = await supabase
             .from('categories')
             .insert({
+                user_id: user.id,
                 name,
                 sort_order,
                 visibility
-            });
+            })
+            .select(`id,name,sort_order,visibility`);
 
         return data;
     }

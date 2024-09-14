@@ -32,18 +32,21 @@ export class CategoriesController {
     @ApiResponse({status: 401, description: '로그인이 필요합니다'})
     @ApiResponse({status: 404, description: '회원가입에 실패하였습니다'})
     async getList(@GetCurrentUser() user) {
-        console.log('fefe', user)
-        return await this.categoriesService.getList();
+        return await this.categoriesService.getList(user);
     }
 
     @Post()
+    @UseGuards(AuthGuard)
     @ApiOperation({summary: '카테고리 생성', description: '카테고리를 생성합니다'})
     @ApiBody({type: CategoryDTO.Create})
     @ApiResponse({status: 201, description: '카테고리를 생성하였습니다 '})
     @ApiResponse({status: 401, description: '로그인이 필요합니다'})
     @ApiResponse({status: 422, description: '유효하지 않은 데이터'})
-    async create(@Body() body: CategoryDTO.Create) {
-        return await this.categoriesService.create(body);
+    async create(
+        @GetCurrentUser() user,
+        @Body() body: CategoryDTO.Create
+    ) {
+        return await this.categoriesService.create(user, body);
     }
 
     @Put(':id')
