@@ -8,11 +8,6 @@ export class AppController {
 
     @Get()
     getHello(): string {
-        return this.appService.getHello();
-    }
-
-    @Get("categories")
-    async getCategories() {
-        return await this.appService.getCategories();
+        return 'Hello';
     }
 }
