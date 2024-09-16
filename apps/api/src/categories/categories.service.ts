@@ -17,8 +17,8 @@ export class CategoriesService {
             sort_order
             `)
             .eq('user_id', user.id)
+            .is('deleted_at', null)
             .order('sort_order', {ascending: true});
-        console.log('결과는', user);
         return data;
     }
 
@@ -34,5 +34,17 @@ export class CategoriesService {
             .select(`id,name,sort_order,visibility`);
 
         return data;
+    }
+
+    async delete(user, {id}) {
+        const {
+            data,
+            error
+        } = await supabase.from('categories').update({deleted_at: new Date()}).eq('id', Number(id)).eq('user_id', user.id).is('deleted_at', null).select();
+
+        if (data.length > 0) {
+            return true;
+        }
+        return error;
     }
 }

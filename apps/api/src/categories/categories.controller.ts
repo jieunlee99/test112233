@@ -1,5 +1,6 @@
-import {Controller, UseGuards, Get, Post, Put, Delete, Body} from '@nestjs/common';
-import {ApiTags, ApiBearerAuth, ApiOperation, ApiBody, ApiResponse, ApiProperty} from '@nestjs/swagger'
+import {Controller, UseGuards, Get, Post, Put, Delete, Param, Body, Res, NotFoundException} from '@nestjs/common';
+import {ApiTags, ApiBearerAuth, ApiOperation, ApiParam, ApiBody, ApiResponse, ApiProperty} from '@nestjs/swagger'
+import {Response} from 'express';
 
 import {AuthGuard} from "../auth/auth.guard";
 import {CategoriesService} from './categories.service';
@@ -30,7 +31,6 @@ export class CategoriesController {
     @ApiOperation({summary: '카테고리 목록', description: '카테고리를 가져옵니다'})
     @ApiResponse({status: 200, description: '카테고리를 가져왔습니다'})
     @ApiResponse({status: 401, description: '로그인이 필요합니다'})
-    @ApiResponse({status: 404, description: '회원가입에 실패하였습니다'})
     async getList(@GetCurrentUser() user) {
         return await this.categoriesService.getList(user);
     }
@@ -56,8 +56,23 @@ export class CategoriesController {
     }
 
     @Delete(":id")
-    async remove() {
+    @UseGuards(AuthGuard)
+    @ApiParam({name: 'id', required: true})
+    @ApiResponse({status: 204, description: '카테고리를 삭제하였습니다'})
+    @ApiResponse({status: 401, description: '로그인이 필요합니다'})
+    @ApiResponse({status: 404, description: '존재하지 않는 카테고리'})
+    async remove(
+        @Res() response: Response,
+        @GetCurrentUser() user,
+        @Param('id') id: number,
+    ) {
+        const result = await this.categoriesService.delete(user, {id});
 
+        if (!result) {
+            throw new NotFoundException();
+        }
+
+        return response.status(204).send(null);
     }
 }
 
