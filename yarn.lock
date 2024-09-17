@@ -2281,10 +2281,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "abcd@workspace:."
   dependencies:
-    "@stylistic/eslint-plugin": "npm:^2.6.4"
-    eslint: "npm:8.57.0"
     turbo: "npm:^2.0.14"
-    typescript: "npm:^5.5.4"
   languageName: unknown
   linkType: soft
 
