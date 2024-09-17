@@ -988,9 +988,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:^10.4.2":
-  version: 10.4.2
-  resolution: "@nestjs/common@npm:10.4.2"
+"@nestjs/common@npm:^10.4.3":
+  version: 10.4.3
+  resolution: "@nestjs/common@npm:10.4.3"
   dependencies:
     iterare: "npm:1.2.1"
     tslib: "npm:2.7.0"
@@ -1005,13 +1005,13 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 10c0/832e8640c9115207e3e41b3ec20a52d429cecf87ce15e261b966bf40e8bdf95c28f48e7f8499ff21ea99fc7c2a7591df1d8e3b3891038f88c001aca37d6959b3
+  checksum: 10c0/3f376333f0438ce3ba21f7887a2ca95acf267086308dd7ef2f9a893b5e286acf73fbee56cc01783c79377218b8d1ba601f694a9a2bd4765f1a14b7570606b7db
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:^10.4.2":
-  version: 10.4.2
-  resolution: "@nestjs/core@npm:10.4.2"
+"@nestjs/core@npm:^10.4.3":
+  version: 10.4.3
+  resolution: "@nestjs/core@npm:10.4.3"
   dependencies:
     "@nuxtjs/opencollective": "npm:0.3.2"
     fast-safe-stringify: "npm:2.1.1"
@@ -1033,7 +1033,7 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 10c0/66a13c962fd2ad490c0111439ece98b7498bb2b6fdef48724ca88b64bbaf8c31cd16c016f4ebb489f2d2b5d878db9808a3a72d747541348333b1e30b2013e7a5
+  checksum: 10c0/86f6ea196ee944e121e7f0b80bdcc796abccc266be48ab169114fc059d9633ccc8ffe646bc4e87933c503a34ffa782bf1f3efe848ae668f88aa7fa6f04568aa8
   languageName: node
   linkType: hard
 
@@ -1054,9 +1054,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:^10.4.2":
-  version: 10.4.2
-  resolution: "@nestjs/platform-express@npm:10.4.2"
+"@nestjs/platform-express@npm:^10.4.3":
+  version: 10.4.3
+  resolution: "@nestjs/platform-express@npm:10.4.3"
   dependencies:
     body-parser: "npm:1.20.3"
     cors: "npm:2.8.5"
@@ -1066,7 +1066,7 @@ __metadata:
   peerDependencies:
     "@nestjs/common": ^10.0.0
     "@nestjs/core": ^10.0.0
-  checksum: 10c0/cec2bff307b552f27be6df90be930ae10f327e867dd44156822b33909d4f481b65802b39f1a1031f28d7721c9963d259d34422bca2891b337ca73e0ce6bcf487
+  checksum: 10c0/32cb79b9dc017d5396297b98034bc08285d1fa5b057610cc20d2009d4419fda3d567aa4cd404fe9a8a5658dba032a67cf763875617545c50eb38d7dfc9d0a7ae
   languageName: node
   linkType: hard
 
@@ -1085,9 +1085,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/swagger@npm:^7.4.1":
-  version: 7.4.1
-  resolution: "@nestjs/swagger@npm:7.4.1"
+"@nestjs/swagger@npm:^7.4.2":
+  version: 7.4.2
+  resolution: "@nestjs/swagger@npm:7.4.2"
   dependencies:
     "@microsoft/tsdoc": "npm:^0.15.0"
     "@nestjs/mapped-types": "npm:2.0.5"
@@ -1109,7 +1109,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 10c0/64051e58e7f63e3e93167e0a144f775ed116b8a49943a5238c861dc2dfe1dc6cf8c639ecdcd31b45cd49caa4a73800d9c05843dd9cce69dce90865a9da6226d9
+  checksum: 10c0/fda99b154933bb23d3b818fddf0338f74389a2bea42089de419c03203f18450faaa3840f1601b1994b312879903395ed34a98772e2decb0aab20c09910c2910c
   languageName: node
   linkType: hard
 
@@ -2487,11 +2487,11 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.10.0"
     "@nestjs/cli": "npm:^10.4.5"
-    "@nestjs/common": "npm:^10.4.2"
-    "@nestjs/core": "npm:^10.4.2"
-    "@nestjs/platform-express": "npm:^10.4.2"
+    "@nestjs/common": "npm:^10.4.3"
+    "@nestjs/core": "npm:^10.4.3"
+    "@nestjs/platform-express": "npm:^10.4.3"
     "@nestjs/schematics": "npm:^10.1.4"
-    "@nestjs/swagger": "npm:^7.4.1"
+    "@nestjs/swagger": "npm:^7.4.2"
     "@nestjs/testing": "npm:^10.4.2"
     "@stylistic/eslint-plugin": "npm:^2.8.0"
     "@supabase/supabase-js": "npm:^2.45.4"
@@ -2501,6 +2501,7 @@ __metadata:
     "@types/node": "npm:^20.16.5"
     "@types/supertest": "npm:^6.0.2"
     eslint: "npm:^9.10.0"
+    express: "npm:^4.21.0"
     jest: "npm:^29.7.0"
     reflect-metadata: "npm:^0.2.2"
     rxjs: "npm:^7.8.1"
@@ -4374,7 +4375,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express@npm:4.21.0":
+"express@npm:4.21.0, express@npm:^4.21.0":
   version: 4.21.0
   resolution: "express@npm:4.21.0"
   dependencies:
