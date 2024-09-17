@@ -44,4 +44,7 @@ corepack install --global yarn
 └── yarn.lock # yarn berry 사용
 ```
 
+## 일부 디펜던시 문제
+eslint 설정 중 오래되어 최신버전의 eslint를 인식하지 못하여 dependency 오류가 발생하는 경우가 존재함. 
+그리하여 `.yarnrc.yml`에 `packageExtensions` 프로퍼티에 해당 패키지들 eslint, typescript 찾을 수 있게 수정함
 
