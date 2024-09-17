@@ -36,6 +36,28 @@ export class CategoriesService {
     return data;
   }
 
+  async update(user, { id, name, sort_order, visibility = 'private' }) {
+    const {
+      data,
+      error,
+    } = await supabase
+      .from('categories')
+      .update({
+        name,
+        sort_order,
+        visibility,
+      })
+      .eq('id', Number(id))
+      .eq('user_id', user.id)
+      .is('deleted_at', null)
+      .select();
+
+    if (data.length > 0) {
+      return true;
+    }
+    return data;
+  }
+
   async delete(user, { id }) {
     const {
       data,

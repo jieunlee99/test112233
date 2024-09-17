@@ -31,7 +31,9 @@ export class CategoriesController {
   @ApiOperation({ summary: '카테고리 목록', description: '카테고리를 가져옵니다' })
   @ApiResponse({ status: 200, description: '카테고리를 가져왔습니다' })
   @ApiResponse({ status: 401, description: '로그인이 필요합니다' })
-  async getList(@GetCurrentUser() user) {
+  async getList(
+    @GetCurrentUser() user,
+  ) {
     return await this.categoriesService.getList(user);
   }
 
@@ -43,16 +45,24 @@ export class CategoriesController {
   @ApiResponse({ status: 401, description: '로그인이 필요합니다' })
   @ApiResponse({ status: 422, description: '유효하지 않은 데이터' })
   async create(
-        @GetCurrentUser() user,
-        @Body() body: CategoryDTO.Create,
+    @GetCurrentUser() user,
+    @Body() body: CategoryDTO.Create,
   ) {
     return await this.categoriesService.create(user, body);
   }
 
   @Put(':id')
+  @UseGuards(AuthGuard)
   @ApiOperation({ summary: '카테고리 수정', description: '카테고리를 수정합니다' })
-  async update() {
-
+  @ApiBody({ type: CategoryDTO.Create })
+  @ApiParam({ name: 'id', required: true })
+  async update(
+    @GetCurrentUser() user,
+    @Body() body,
+    @Param('id') id: number,
+  ) {
+      console.log('와라 여기')
+    return await this.categoriesService.update(user, { id, ...body });
   }
 
   @Delete(':id')
@@ -62,9 +72,9 @@ export class CategoriesController {
   @ApiResponse({ status: 401, description: '로그인이 필요합니다' })
   @ApiResponse({ status: 404, description: '존재하지 않는 카테고리' })
   async remove(
-        @Res() response: Response,
-        @GetCurrentUser() user,
-        @Param('id') id: number,
+    @Res() response: Response,
+    @GetCurrentUser() user,
+    @Param('id') id: number,
   ) {
     const result = await this.categoriesService.delete(user, { id });
 
