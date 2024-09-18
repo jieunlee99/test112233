@@ -2525,7 +2525,7 @@ __metadata:
     ts-loader: "npm:^9.5.1"
     ts-node: "npm:^10.9.2"
     tsconfig-paths: "npm:^4.2.0"
-    typescript: "npm:^5.6.2"
+    typescript: "npm:^5.5.4"
     typescript-eslint: "npm:^8.6.0"
     webpack: "npm:^5.94.0"
   languageName: unknown
@@ -9125,7 +9125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:*, typescript@npm:^5.6.2":
+"typescript@npm:*":
   version: 5.6.2
   resolution: "typescript@npm:5.6.2"
   bin:
@@ -9155,7 +9155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A*#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.6.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A*#optional!builtin<compat/typescript>":
   version: 5.6.2
   resolution: "typescript@patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=379a07"
   bin:
