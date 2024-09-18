@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 390px;
+  height: 100vh;
+  background-color: #939393;
+}
+
+main {
+  flex-grow: 1;
+  padding: 32px;
+  background-color: white;
+}
